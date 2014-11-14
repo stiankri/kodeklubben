@@ -9,7 +9,7 @@ Workshop for å lære om programmering mot internett-tjenester.
  - [Maven](http://maven.apache.org/download.cgi)
 
 ## Yr
-Lurer du på hvor kaldt det er ute? Eller kanskje hva temperaturen kommer til å være om noen dager? Dette programmet henter værvarsel fra [yr.no](http://www.yr.no/), som levert av Meteorologisk institutt og NRK.
+Lurer du på hvor kaldt det er ute? Eller kanskje hva temperaturen kommer til å være om noen dager? Dette programmet henter værvarsel fra [yr.no](http://www.yr.no/), som er levert av Meteorologisk institutt og NRK.
 ```sh
 cd yr
 mvn clean package
