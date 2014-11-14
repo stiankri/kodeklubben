@@ -8,7 +8,7 @@ Workshop for å lære om programmering mot internett-tjenester.
  - [Eclipse](https://www.eclipse.org/downloads/)
  - [Maven](http://maven.apache.org/download.cgi)
 
-## yr.no
+## Yr
 Lurer du på hvor kaldt det er ute? Eller kanskje hva temperaturen kommer til å være om noen dager? Dette programmet henter værvarsel fra [yr.no](http://www.yr.no/), som levert av Meteorologisk institutt og NRK.
 ```sh
 cd yr
@@ -16,7 +16,7 @@ mvn clean package
 java -jar target/yr-1.0.jar
 ```
 
- - [yr.no API](http://om.yr.no/verdata/)
+ - [Yr API](http://om.yr.no/verdata/)
 
 ## Spotify og Flickr
 Eksempelet søker etter en artist, f.eks. 'Justin Bieber', på [Spotify](https://www.spotify.com/). Den tar så det øverste treffet og søker etter bilder på [Flickr](https://www.flickr.com/). Resultatet blir vist i et eget vindu.
