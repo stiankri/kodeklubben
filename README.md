@@ -8,13 +8,15 @@ Workshop for å lære om programmering mot internett-tjenester.
  - [Eclipse](https://www.eclipse.org/downloads/)
  - [Maven](http://maven.apache.org/download.cgi)
 
-## Yr
-Lurer du på hvor kaldt det er ute? Eller kanskje hva temperaturen kommer til å være om noen dager? Dette programmet vil gi svar fra [Yr](http://www.yr.no/).
+## yr.no
+Lurer du på hvor kaldt det er ute? Eller kanskje hva temperaturen kommer til å være om noen dager? Dette programmet henter værvarsel fra [yr.no](http://www.yr.no/), som levert av Meteorologisk institutt og NRK.
 ```sh
 cd yr
 mvn clean package
 java -jar target/yr-1.0.jar
 ```
+
+ - [yr.no API](http://om.yr.no/verdata/)
 
 ## Spotify og Flickr
 Eksempelet søker etter en artist, f.eks. 'Justin Bieber', på [Spotify](https://www.spotify.com/). Den tar så det øverste treffet og søker etter bilder på [Flickr](https://www.flickr.com/). Resultatet blir vist i et eget vindu.
@@ -41,3 +43,13 @@ java -jar target/follower-guard-1.0-SNAPSHOT-jar-with-dependencies.jar
 
  - [Instagram API](http://instagram.com/developer/)
  - [Instagram Java Library](https://github.com/sachin-handiekar/jInstagram)
+
+## Twitter
+Har du lyst til å sende ut [tweets](https://twitter.com/) automatisk? Det gjør dette eksempelet.
+```sh
+cd pushy
+mvn clean package
+java -jar target/pushy-1.0-SNAPSHOT-jar-with-dependencies.jar
+```
+
+ - [Spotify API](https://dev.twitter.com/rest/public)
