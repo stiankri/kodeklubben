@@ -25,15 +25,22 @@ import javax.xml.xpath.XPathFactory;
  *
  */
 public class YrForecast {
-    final String serviceBaseURL = "http://www.yr.no/sted/";
+    final String serviceBaseURL = "http://www.yr.no/sted";
+
+
+    // ------------ Støttemetoder for XML-parsing og XPath-evaluering ------------
+
     final XPath xpath = XPathFactory.newInstance().newXPath();
     DocumentBuilder docBuilder = null;
 
     /**
      * Nødvendig standardkode for å sette opp en XML-parser
-     * @return En document builder som brukes til XML parsing
      */
-    private DocumentBuilder setupDocumentBuilder() {
+    private void setupDocumentBuilder() {
+        if (docBuilder != null) {
+            return;
+        }
+
         // Setter opp Javas DOM XML parser
         DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 
@@ -42,8 +49,6 @@ public class YrForecast {
         } catch (ParserConfigurationException e) {
             System.err.println("Fikk ikke laget XML-parser - avslutter...");
         }
-
-        return docBuilder;
     }
 
     /**
@@ -75,6 +80,8 @@ public class YrForecast {
         return (NodeList) getXPathValue(xmlDocument, xPathExpression, XPathConstants.NODESET);
     }
 
+    // ------------ Logikk knyttet til værvarsler fra Yr.no ------------
+
     /**
      * Skriver ut værvarsel for oppgitt sted på standard output
      *
@@ -84,15 +91,16 @@ public class YrForecast {
      * @param place Sted, f.eks. "Byåsen"
      */
     public void printForecast(String country, String county, String municipality, String place) {
-        String requestUrlString = serviceBaseURL + country + "/" + county + "/" +
-                                  municipality + "/" + place + "/forecast.xml";
+        String requestUrlString =
+            String.join("/", serviceBaseURL, country , county, municipality, place, "/forecast.xml");
+
+        String locationString = String.join(", ", country, county, municipality, place);
+        System.out.println("Værvarsel for " + locationString);
 
         // Sett opp docBuilder om den ikke allerede er satt opp
+        setupDocumentBuilder();
         if (docBuilder == null) {
-            docBuilder = setupDocumentBuilder();
-            if (docBuilder == null) {
-                return;
-            }
+            return;
         }
 
         // Laster ned og parser XML
