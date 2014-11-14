@@ -20,7 +20,6 @@ java -jar target/yr-1.0.jar
  - [Værvarsel i XML-format fra Yr.no](http://om.yr.no/verdata/xml/)
  - [Introduksjon til XPath (på engelsk)](http://www.w3schools.com/xpath/)
 
-
 ## Spotify og Flickr
 Eksempelet søker etter en artist, f.eks. 'Justin Bieber', på [Spotify](https://www.spotify.com/). Den tar så det øverste treffet og søker etter bilder på [Flickr](https://www.flickr.com/). Resultatet blir vist i et eget vindu.
 ```sh
@@ -47,3 +46,13 @@ java -jar target/follower-guard-1.0-SNAPSHOT-jar-with-dependencies.jar
  - [Instagram API](http://instagram.com/developer/)
  - [Instagram Java Library](https://github.com/sachin-handiekar/jInstagram)
 
+## Twitter
+Har du lyst til å sende ut [tweets](https://twitter.com/) automatisk? Det gjør dette eksempelet.
+```sh
+cd pushy
+mvn clean package
+java -jar target/pushy-1.0-SNAPSHOT-jar-with-dependencies.jar
+```
+
+ - [Twitter API](https://dev.twitter.com/rest/public)
+ - [Twitter Java Library](http://twitter4j.org/en/)
