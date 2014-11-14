@@ -9,12 +9,18 @@ Workshop for å lære om programmering mot internett-tjenester.
  - [Maven](http://maven.apache.org/download.cgi)
 
 ## Spotify og Flickr
-Eksempelet søker etter en artist, f.eks. 'Justin Bieber', på Spotify. Den tar så det øverste treffet og søker etter bilder på Flickr. Resultatet blir vist i et eget vindu.
+Eksempelet søker etter en artist, f.eks. 'Justin Bieber', på [Spotify](https://www.spotify.com/). Den tar så det øverste treffet og søker etter bilder på [Flickr](https://www.flickr.com/). Resultatet blir vist i et eget vindu.
 ```sh
 cd spotify-meets-flickr
 mvn clean package
 java -jar target/spotify-meets-flickr-1.0-jar-with-dependencies.jar 'Justin Bieber'
 ```
+
+Dokumentasjon:
+ - [Spotify API](https://developer.spotify.com/web-api/)
+ - [Spotify Java Library](https://github.com/thelinmichael/spotify-web-api-java)
+ - [Flickr API](https://www.flickr.com/services/api/)
+ - [Flickr Java Library](https://github.com/callmeal/Flickr4Java)
 
 ## Instagram
 På Instagram kan du få beskjed når noen starter å følge deg, men ikke hvis noen slutter å følge deg. Dette eksempelet viser hvordan vi kan følge med på endringer.
