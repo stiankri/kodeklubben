@@ -52,4 +52,5 @@ mvn clean package
 java -jar target/pushy-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
 
- - [Spotify API](https://dev.twitter.com/rest/public)
+ - [Twitter API](https://dev.twitter.com/rest/public)
+ - [Twitter Java Library](http://twitter4j.org/en/)
