@@ -16,13 +16,15 @@ mvn clean package
 java -jar target/spotify-meets-flickr-1.0-jar-with-dependencies.jar 'Justin Bieber'
 ```
 
+Det går an å utvide programmet på mange måter. En avansert variant er å hente ned spillelistene til en bruker og vise en ny artist hvert minutt. API dokumentasjonen nedenfor lister opp hvordan Spotify og Flickr kan brukes.
+
  - [Spotify API](https://developer.spotify.com/web-api/)
  - [Spotify Java Library](https://github.com/thelinmichael/spotify-web-api-java)
  - [Flickr API](https://www.flickr.com/services/api/)
  - [Flickr Java Library](https://github.com/callmeal/Flickr4Java)
 
 ## Instagram
-På Instagram kan du få beskjed når noen starter å følge deg, men ikke hvis noen slutter å følge deg. Dette eksempelet viser hvordan vi kan følge med på endringer.
+På [Instagram](http://instagram.com/) kan du få beskjed når noen starter å følge deg, men ikke hvis noen slutter å følge deg. Dette eksempelet viser hvordan vi kan følge med på endringer.
 ```sh
 cd followerguard
 mvn clean package
