@@ -16,7 +16,6 @@ mvn clean package
 java -jar target/spotify-meets-flickr-1.0-jar-with-dependencies.jar 'Justin Bieber'
 ```
 
-#### Dokumentasjon
  - [Spotify API](https://developer.spotify.com/web-api/)
  - [Spotify Java Library](https://github.com/thelinmichael/spotify-web-api-java)
  - [Flickr API](https://www.flickr.com/services/api/)
@@ -30,6 +29,5 @@ mvn clean package
 java -jar target/follower-guard-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
 
-#### Dokumentasjon
  - [Instagram API](http://instagram.com/developer/)
  - [Instagram Java Library](https://github.com/sachin-handiekar/jInstagram)
