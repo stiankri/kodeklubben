@@ -8,15 +8,17 @@ Workshop for å lære om programmering mot internett-tjenester.
  - [Eclipse](https://www.eclipse.org/downloads/)
  - [Maven](http://maven.apache.org/download.cgi)
 
-## Yr
-Lurer du på hvor kaldt det er ute? Eller kanskje hva temperaturen kommer til å være om noen dager? Dette programmet henter værvarsel fra [yr.no](http://www.yr.no/), som er levert av Meteorologisk institutt og NRK.
+## Yr.no
+Eksempelet henter værdata fra Yr.no og skriver ut siste målte temperatur samt forventet temperatur de neste dagene for et hardkodet sted i Norge (Byåsen i Trondheim). Returdataene fra Yr.no er i XML og data hentes ut ved hjelp av XPath-uttrykk.
+
 ```sh
 cd yr
 mvn clean package
 java -jar target/yr-1.0.jar
 ```
 
- - [Yr API](http://om.yr.no/verdata/)
+ - [Værvarsel i XML-format fra Yr.no](http://om.yr.no/verdata/xml/)
+ - [Introduksjon til XPath (på engelsk)](http://www.w3schools.com/xpath/)
 
 ## Spotify og Flickr
 Eksempelet søker etter en artist, f.eks. 'Justin Bieber', på [Spotify](https://www.spotify.com/). Den tar så det øverste treffet og søker etter bilder på [Flickr](https://www.flickr.com/). Resultatet blir vist i et eget vindu.
