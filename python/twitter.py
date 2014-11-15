@@ -5,12 +5,14 @@ from TwitterAPI import TwitterAPI
 
     
 def tweetWeather():
-    xml = urllib.request.urlopen("http://www.yr.no/place/Norway/Buskerud/Hol/Raggsteindalen/forecast.xml")
+    xml = urllib.request.urlopen("http://www.yr.no/place/Sweden/J%C3%A4mtland/%C3%85re/forecast.xml")
     dom = parseString(xml.read())
 
     temperatures = dom.getElementsByTagName("temperature")
     windSpeeds = dom.getElementsByTagName("windSpeed")
-    weatherStatus = "There is " + temperatures[0].attributes["value"].value + " C in Hol and a " + windSpeeds[0].attributes["name"].value.lower()
+    locationnames = dom.getElementsByTagName("name")
+    weatherStatus = "There is " + temperatures[0].attributes["value"].value + " C in " + locationnames[0].firstChild.nodeValue.strip() + " and a " + windSpeeds[0].attributes["name"].value.lower()
+
 
     api = TwitterAPI("TsCwojpT0cJkXGsSR24VANpTy",
                      "GtMZ7VGSqe2DBG3MSZzIlvAhTD1MM25R5XSmAUu29VAjQPeWsj",
