@@ -1,16 +1,22 @@
 from xml.dom.minidom import parseString
 import urllib.request
 import time
+import sys
+
 from TwitterAPI import TwitterAPI
 
     
-def tweetWeather():
-    xml = urllib.request.urlopen("http://www.yr.no/place/Norway/Buskerud/Hol/Raggsteindalen/forecast.xml")
+def tweetWeather(url):
+    xml = urllib.request.urlopen(url)
     dom = parseString(xml.read())
 
     temperatures = dom.getElementsByTagName("temperature")
     windSpeeds = dom.getElementsByTagName("windSpeed")
-    weatherStatus = "There is " + temperatures[0].attributes["value"].value + " C in Hol and a " + windSpeeds[0].attributes["name"].value.lower()
+    locationnames = dom.getElementsByTagName("name")
+    locationname = locationnames[0].firstChild.nodeValue.strip()
+
+    weatherStatus = "There is " + temperatures[0].attributes["value"].value + " C in " + locationname + " and a " + windSpeeds[0].attributes["name"].value.lower()
+    print(weatherStatus)
 
     api = TwitterAPI("TsCwojpT0cJkXGsSR24VANpTy",
                      "GtMZ7VGSqe2DBG3MSZzIlvAhTD1MM25R5XSmAUu29VAjQPeWsj",
@@ -20,8 +26,12 @@ def tweetWeather():
     print(r.status_code)
     return
 
+yrURL = "http://www.yr.no/place/Sweden/J%C3%A4mtland/%C3%85re/forecast.xml"
+if (len(sys.argv) > 1) and ("http" in sys.argv[1]):
+    yrURL = sys.argv[1]
+
 while True:
-    tweetWeather()
+    tweetWeather(yrURL)
     time.sleep(60)
 
 
